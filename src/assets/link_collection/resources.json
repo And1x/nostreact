@@ -1,0 +1,107 @@
+{
+  "Developer Tools": [
+    {
+      "title": "Nostr Tools in JS",
+      "url": "https://github.com/nbd-wtf/nostr-tools",
+      "category": ["dev", "js", "ts", "sdk"]
+    },
+    {
+      "title": "Nostr Tools in Go",
+      "url": "https://github.com/nbd-wtf/go-nostr",
+      "category": ["dev", "go", "sdk"]
+    },
+    {
+      "title": "Debug/Sandbox as local Web App",
+      "url": "https://nostrdebug.com/",
+      "category": ["dev", "web"]
+    },
+    {
+      "title": "Nostr Connect SDK for TypeScript",
+      "url": "https://github.com/nostr-connect/connect",
+      "category": ["dev", "ts", "sdk"]
+    },
+    {
+      "title": "React Hooks for Nostr",
+      "url": "https://github.com/t4t5/nostr-react",
+      "category": ["dev", "react", "ts"]
+    },
+    {
+      "title": "Nostr RealyPool implementation in TypeScript",
+      "url": "https://github.com/adamritter/nostr-relaypool-ts",
+      "category": ["dev", "relay"]
+    },
+    {
+      "title": "---Placeholder---",
+      "url": "#",
+      "category": []
+    },
+    {
+      "title": "---Placeholder---",
+      "url": "#",
+      "category": []
+    },
+    {
+      "title": "---Placeholder---",
+      "url": "#",
+      "category": []
+    },
+    {
+      "title": "---Placeholder---",
+      "url": "#",
+      "category": []
+    },
+    {
+      "title": "---Placeholder---",
+      "url": "#",
+      "category": []
+    }
+  ],
+  "Clients GUI": [
+    {
+      "title": "Iris Web client",
+      "url": "https://iris.to",
+      "category": []
+    },
+    {
+      "title": "Snort Web client",
+      "url": "https://snort.social",
+      "category": []
+    },
+    {
+      "title": "Gossip Desktop client",
+      "url": "https://github.com/mikedilger/gossip",
+      "category": []
+    }
+  ],
+  "Clients CLI": [
+    {
+      "title": "Nostr CLI in GO",
+      "url": "https://github.com/fiatjaf/noscl",
+      "category": ["go", "cli"]
+    },
+    {
+      "title": "Nostr CLI in C",
+      "url": "https://github.com/jb55/nostril",
+      "category": []
+    }
+  ],
+  "Key Management": [
+    {
+      "title": "GetAlby LN & Nostr Browser Extension",
+      "url": "https://getalby.com/",
+      "category": ["key", "wallet", "extension"]
+    },
+    {
+      "title": "nos2x Browser Extension",
+      "url": "https://github.com/fiatjaf/nos2x",
+      "category": ["key", "extension"]
+    }
+  ],
+  "Others": [
+    {
+      "title": "Mixed Long list with Nostr Project",
+      "url": "https://github.com/aljazceru/awesome-nostr",
+      "category": ["list"]
+    }
+  ]
+}
