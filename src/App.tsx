@@ -1,6 +1,6 @@
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-import Resources from "./Components/Resources";
+import RouteSwitch from "./RouteSwitch";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         NOSTR Resources and other stuff...
       </h1>
 
-      <Resources />
+      <RouteSwitch />
       <Footer />
     </div>
   );

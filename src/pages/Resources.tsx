@@ -19,7 +19,6 @@ export default function Linklist() {
   };
 
   const keyDownEv = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    console.log(event.key);
     if (event.code === "ArrowRight") {
       moveRight();
     } else if (event.code === "ArrowLeft") {
