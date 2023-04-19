@@ -1,5 +1,6 @@
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Resources from "./Components/Resources";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         NOSTR Resources and other stuff...
       </h1>
 
-      {/* <Linklist /> */}
+      <Resources />
       <Footer />
     </div>
   );
