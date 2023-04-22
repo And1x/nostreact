@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import ContentBox from "../Components/ContentBox";
 import { generateLinkListsJSX } from "../utils/getResources";
 
 export default function Linklist() {
@@ -38,17 +39,19 @@ export default function Linklist() {
       >
         ˂˂
       </div>
-      <ul className="relative box-border h-auto w-96 p-7 font-bold list-disc text-slate-200 bg-gray-700 rounded border border-emerald-600 shadow-xl">
-        <img
-          src="src/assets/img/ostrich.png"
-          alt=""
-          className="absolute h-36 opacity-40 right-5 bottom-0"
-        />
-        <div className="text-center text-2xl underline text-emerald-300 font-bold mb-6">
-          {currentSection}
-        </div>
-        {listItems[currentSection]}
-      </ul>
+      <ContentBox>
+        <ul className="w-96">
+          <img
+            src="src/assets/img/ostrich.png"
+            alt=""
+            className="absolute h-36 opacity-40 right-5 bottom-0"
+          />
+          <div className="text-center text-2xl underline text-emerald-300 font-bold mb-6">
+            {currentSection}
+          </div>
+          {listItems[currentSection]}
+        </ul>
+      </ContentBox>
       <div
         className="flex items-center cursor-pointer p-1  text-emerald-600 font-bold"
         onClick={moveRight}

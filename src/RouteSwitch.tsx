@@ -1,8 +1,7 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Resources from "./pages/Resources";
-import Notes from "./pages/Notes";
+import NostrSearch from "./pages/NostrSearch";
 
 const RouteSwitch = () => {
   return (
@@ -10,7 +9,7 @@ const RouteSwitch = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/notes" element={<Notes />} />
+        <Route path="/search" element={<NostrSearch />} />
       </Routes>
     </BrowserRouter>
   );

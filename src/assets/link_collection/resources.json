@@ -1,6 +1,21 @@
 {
   "Developer Tools": [
     {
+      "title": "NIPS - Nostr Implementation Possibilities",
+      "url": "https://github.com/nostr-protocol/nips",
+      "category": ["dev", "spec"]
+    },
+    {
+      "title": "Debug/Sandbox as local Web App",
+      "url": "https://nostrdebug.com/",
+      "category": ["dev", "web", "converter"]
+    },
+    {
+      "title": "nostr army knife",
+      "url": "https://nak.nostr.com/",
+      "category": ["dev", "web", "converter"]
+    },
+    {
       "title": "Nostr Tools in JS",
       "url": "https://github.com/nbd-wtf/nostr-tools",
       "category": ["dev", "js", "ts", "sdk"]
@@ -9,11 +24,6 @@
       "title": "Nostr Tools in Go",
       "url": "https://github.com/nbd-wtf/go-nostr",
       "category": ["dev", "go", "sdk"]
-    },
-    {
-      "title": "Debug/Sandbox as local Web App",
-      "url": "https://nostrdebug.com/",
-      "category": ["dev", "web"]
     },
     {
       "title": "Nostr Connect SDK for TypeScript",
@@ -29,21 +39,6 @@
       "title": "Nostr RealyPool implementation in TypeScript",
       "url": "https://github.com/adamritter/nostr-relaypool-ts",
       "category": ["dev", "relay"]
-    },
-    {
-      "title": "---Placeholder---",
-      "url": "#",
-      "category": []
-    },
-    {
-      "title": "---Placeholder---",
-      "url": "#",
-      "category": []
-    },
-    {
-      "title": "---Placeholder---",
-      "url": "#",
-      "category": []
     },
     {
       "title": "---Placeholder---",
@@ -102,6 +97,11 @@
       "title": "Mixed Long list with Nostr Project",
       "url": "https://github.com/aljazceru/awesome-nostr",
       "category": ["list"]
+    },
+    {
+      "title": "Nostr motivation",
+      "url": "https://github.com/nostr-protocol/nostr",
+      "category": []
     }
   ]
 }
