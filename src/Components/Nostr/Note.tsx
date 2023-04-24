@@ -1,34 +1,35 @@
-import { useNostrEvents } from "nostr-react";
+import ProfileMin from "./ProfileMin";
+import { Event } from "nostr-tools";
 
-export default function Note({ noteID }: { noteID: string }) {
-  const { events } = useNostrEvents({
-    filter: {
-      ids: [noteID],
-      kinds: [0, 1],
-
-      // todo: handle nevent too?
-      //   "#e": [noteID],
-    },
-  });
-
+export default function Note({ event }: { event: Event }) {
   return (
     <>
-      {events.map((event) => (
-        <p key={event.id} className="text-emerald-50">
-          {event.pubkey} <br />
-          posted: {event.content}
-          <br />
-          ev-id: {event.id} <br />
-          ev-pubkey: {event.pubkey}
-          <br />
-          ev-kind: {event.kind}
-          <br />
-          ev-tags: {event.tags[0]}
-          <br />
-          <br />
-          <br />
-        </p>
-      ))}
+      <div
+        key={event.id}
+        className="flex gap-2 h-auto max-w-[75vw] text-emerald-50 "
+      >
+        <ProfileMin pubkey={event.pubkey}></ProfileMin>
+
+        <div>
+          <div className="break-all">msg: {event.content}</div>
+          <h3>Stats:</h3>
+          <div>
+            {event.tags.map((tag, i) => {
+              return (
+                <div>
+                  {`${i}: `}
+                  {tag}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* <div>EV tags:{event.tags[0]}</div> */}
+          <div>EV kind: {event.kind}</div>
+          <div>EV pub: {event.pubkey}</div>
+          <div>---------------------</div>
+        </div>
+      </div>
     </>
   );
 }

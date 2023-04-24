@@ -2,9 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { NostrProvider } from "nostr-react";
 import { nip19 } from "nostr-tools";
-import Profile from "../Components/Nostr/Profile";
+import Profile from "../Components/Nostr/ProfileFull";
 import Note from "../Components/Nostr/Note";
 import ContentBox from "../Components/ContentBox";
+import NoteList from "../Components/Nostr/NoteList";
 
 const relayUrls = [
   "wss://nostr.wine",
@@ -41,7 +42,9 @@ export default function NostrSearch() {
       if (decodedValues[0] === "npub") {
         return <Profile pubkey={decodedValues[1]} />;
       } else if (decodedValues[0] === "note") {
-        return <Note noteID={decodedValues[1]} />;
+        // todo: additional paths -> Parents are handled diff. than Child Notes
+        console.log("hereeee", decodedValues[1]);
+        return <NoteList noteID={decodedValues[1]} />;
       }
     } catch (e: unknown) {
       if (e instanceof Error) {
