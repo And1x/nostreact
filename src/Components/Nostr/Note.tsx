@@ -6,13 +6,13 @@ export default function Note({ event }: { event: Event }) {
     <>
       <div
         key={event.id}
-        className="flex gap-2 h-auto max-w-[75vw] text-emerald-50 "
+        className="flex gap-2 h-auto max-w-[75vw] font-normal text-emerald-50 "
       >
         <ProfileMin pubkey={event.pubkey}></ProfileMin>
 
-        <div>
-          <div className="break-all">msg: {event.content}</div>
-          <h3>Stats:</h3>
+        <div className="[overflow-wrap:anywhere]">{event.content}</div>
+        {/* todo: use tags and other metadata as modal */}
+        {/* <h3>Stats:</h3>
           <div>
             {event.tags.map((tag, i) => {
               return (
@@ -22,13 +22,11 @@ export default function Note({ event }: { event: Event }) {
                 </div>
               );
             })}
-          </div>
+          </div> */}
 
-          {/* <div>EV tags:{event.tags[0]}</div> */}
-          <div>EV kind: {event.kind}</div>
-          <div>EV pub: {event.pubkey}</div>
-          <div>---------------------</div>
-        </div>
+        {/* <div>EV tags:{event.tags[0]}</div> */}
+        {/* <div>EV kind: {event.kind}</div> */}
+        {/* <div>EV pub: {event.pubkey}</div> */}
       </div>
     </>
   );
