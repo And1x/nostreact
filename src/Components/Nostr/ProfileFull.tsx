@@ -1,15 +1,34 @@
 import { useProfile } from "nostr-react";
+import { useParams } from "react-router-dom";
+import { nip19 } from "nostr-tools";
 
-export default function ProfileFull({ pubkey }: { pubkey: string }) {
+export default function ProfileFull() {
+  let params = useParams();
+  if (!params.pubkey) {
+    // todo: handle invalid pubkey
+    return <></>;
+  }
+
+  //   1. regexp if npub or hex
+  let pubkey = params.pubkey?.startsWith("npub")
+    ? Object.values(nip19.decode(params.pubkey))[1]
+    : // todo: check if valid hex-profile string instead len > 1
+    params.pubkey?.length > 1
+    ? params.pubkey
+    : // todo: don't use empty string incase it's invalid HEX
+      "";
+
   const { data: userData } = useProfile({
     pubkey,
   });
+
+  console.log(pubkey, userData);
 
   return (
     <div className="flex gap-2 h-auto w-[75vw]  text-emerald-50 font-bold ">
       <img
         src={
-          userData?.picture ? userData?.picture : "src/assets/img/ostrich.png"
+          userData?.picture ? userData?.picture : "/src/assets/img/ostrich.png"
         }
         alt="user picture"
         className="h-32 w-32 border-solid border-2 rounded-full border-emerald-600"

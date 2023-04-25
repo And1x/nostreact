@@ -1,23 +1,14 @@
 import { useNostrEvents } from "nostr-react";
 import ContentBox from "../ContentBox";
 import Note from "./Note";
-import { useParams } from "react-router-dom";
 
 // todo: rethink to create Lists not only from noteIDs eg. #hashtags
-export default function NoteList() {
-  let params = useParams();
-  // todo: handle invalid noteID
-  if (!params.noteID) {
-    return <></>;
-  }
-
-  let noteID = params.noteID;
-
+export default function NoteList({ noteID }: { noteID: string }) {
   const parentEV = getEventsFiltered({ noteID }, true);
   const events = getEventsFiltered({ noteID }, false);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-3">
+    <>
       {parentEV.map((event) => {
         return (
           <ContentBox>
@@ -37,7 +28,7 @@ export default function NoteList() {
           );
         }
       })}
-    </div>
+    </>
   );
 }
 
