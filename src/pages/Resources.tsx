@@ -29,7 +29,7 @@ export default function Linklist() {
 
   return (
     <div
-      className="flex justify-center min-h-[256px] focus:outline-none"
+      className="flex justify-center min-h-[256px] min-w-[36rem] max-w-[36rem] focus:outline-none"
       onKeyDown={keyDownEv}
       tabIndex={0}
     >
@@ -40,7 +40,7 @@ export default function Linklist() {
         ˂˂
       </div>
       <ContentBox>
-        <ul className="w-96">
+        <ul>
           <img
             src="src/assets/img/ostrich.png"
             alt=""

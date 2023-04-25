@@ -10,8 +10,9 @@ function App() {
       <h1 className="text-3xl text-center text-emerald-700 pt-2 font-bold underline p-5">
         NOSTR Resources and other stuff...
       </h1>
-
-      <RouteSwitch />
+      <div className="flex justify-center">
+        <RouteSwitch />
+      </div>
       <Footer />
     </div>
   );

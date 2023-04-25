@@ -74,7 +74,9 @@ export default function NostrSearch() {
 
         {/* SEARCH Result */}
         {searchJSX.type !== React.Fragment ? (
-          <ContentBox>{searchJSX}</ContentBox>
+          <div className="flex flex-col gap-2 min-w-[54rem] max-w-[54rem]">
+            {searchJSX}
+          </div>
         ) : (
           <></>
         )}
