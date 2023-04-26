@@ -4,10 +4,12 @@ import Resources from "./pages/Resources";
 import NostrSearch from "./pages/NostrSearch";
 import ProfileFull from "./Components/Nostr/ProfileFull";
 import NoteList from "./Components/Nostr/NoteList";
+import Navbar from "./Components/Navbar";
 
 const RouteSwitch = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/resources" element={<Resources />} />

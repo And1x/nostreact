@@ -51,7 +51,7 @@ export default function NostrSearch() {
         <input
           name="search"
           placeholder="npub, note, hex..."
-          className="outline-none border-emerald-600 border-solid rounded-md w-96"
+          className="outline-none focus:border-2 focus:border-orange-400 border-2 border-white border-solid rounded-md w-64"
         ></input>
         <button type="reset" className="text-red-600">
           X
