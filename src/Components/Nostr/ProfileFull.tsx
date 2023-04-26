@@ -16,7 +16,15 @@ export default function ProfileFull() {
     pubkey,
   });
 
-  console.log(pubkey, userData);
+  let profileName = userData?.name
+    ? userData.name
+    : userData?.display_name
+    ? userData.display_name
+    : userData?.username
+    ? userData.username
+    : "";
+
+  document.title = profileName;
 
   return (
     <div>
@@ -34,15 +42,7 @@ export default function ProfileFull() {
           <table>
             <tr className="even:break-all">
               <td className="text-emerald-400 pr-2">name:</td>
-              <td>
-                {userData?.name
-                  ? userData.name
-                  : userData?.display_name
-                  ? userData.display_name
-                  : userData?.username
-                  ? userData.username
-                  : ""}
-              </td>
+              <td>{profileName}</td>
             </tr>
             <tr className="even:break-all">
               <td className="text-emerald-400 pr-2">npub:</td>

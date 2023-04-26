@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Resources from "./pages/Resources";
-import NostrSearch from "./pages/NostrSearch";
+import NostrSearch from "./Components/Nostr/Search";
 import ProfileFull from "./Components/Nostr/ProfileFull";
 import NoteList from "./Components/Nostr/NoteList";
 import Navbar from "./Components/Navbar";

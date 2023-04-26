@@ -1,4 +1,4 @@
-import NostrSearch from "../pages/NostrSearch";
+import NostrSearch from "./Nostr/Search";
 
 export default function Navbar() {
   return (
