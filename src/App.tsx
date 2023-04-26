@@ -2,6 +2,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import RouteSwitch from "./RouteSwitch";
 import { NostrProvider } from "nostr-react";
+
 const relayUrls = [
   "wss://nostr.wine",
   "wss://nostr-pub.wellorder.net",

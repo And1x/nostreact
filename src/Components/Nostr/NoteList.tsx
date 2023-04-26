@@ -2,6 +2,7 @@ import { useNostrEvents } from "nostr-react";
 import ContentBox from "../ContentBox";
 import Note from "./Note";
 import { useParams } from "react-router-dom";
+import { toHex } from "../../utils/formatNIP19";
 
 // todo: rethink to create Lists not only from noteIDs eg. #hashtags
 export default function NoteList() {
@@ -11,7 +12,7 @@ export default function NoteList() {
     return <></>;
   }
 
-  let noteID = params.noteID;
+  let noteID = toHex(params.noteID, "note");
 
   const parentEV = getEventsFiltered({ noteID }, true);
   const events = getEventsFiltered({ noteID }, false);
@@ -20,6 +21,7 @@ export default function NoteList() {
     <div className="flex flex-col items-center justify-center gap-3">
       {parentEV.map((event) => {
         return (
+          // todo: add ContentBox with differntstyling to show it's parent
           <ContentBox>
             <Note event={event}></Note>
           </ContentBox>

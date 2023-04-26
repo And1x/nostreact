@@ -1,4 +1,5 @@
 import { useProfile } from "nostr-react";
+import { nip19 } from "nostr-tools";
 
 export default function ProfileMin({ pubkey }: { pubkey: string }) {
   const { data: userData } = useProfile({
@@ -14,7 +15,10 @@ export default function ProfileMin({ pubkey }: { pubkey: string }) {
         alt="user picture"
         className="h-24 w-24 border-solid border-2 rounded-full self-center border-emerald-600"
       />
-      <a href={`p/${pubkey}`} className="min-w-0 text-center truncate">
+      <a
+        href={`/p/${nip19.npubEncode(pubkey)}`}
+        className="min-w-0 text-center truncate"
+      >
         {userData?.name
           ? userData?.name
           : userData?.display_name
