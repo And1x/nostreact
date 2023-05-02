@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import ContentBox from "../Components/ContentBox";
 import { generateLinkListsJSX } from "../utils/getResources";
+import ostrichImg from "/src/assets/img/ostrich.png";
 
 export default function Linklist() {
   let listItems = generateLinkListsJSX();
@@ -42,7 +43,7 @@ export default function Linklist() {
       <ContentBox>
         <ul>
           <img
-            src="/src/assets/img/ostrich.png"
+            src={ostrichImg}
             alt=""
             className="absolute h-36 opacity-40 right-5 bottom-0"
           />

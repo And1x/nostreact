@@ -1,5 +1,6 @@
 import { useProfile } from "nostr-react";
 import { nip19 } from "nostr-tools";
+import defaultAvatar from "/src/assets/img/ostrich.png";
 
 export default function ProfileMin({ pubkey }: { pubkey: string }) {
   const { data: userData } = useProfile({
@@ -9,9 +10,7 @@ export default function ProfileMin({ pubkey }: { pubkey: string }) {
   return (
     <div className="flex flex-col w-28 min-w-[7rem] text-emerald-50 text-xs  border-r-[1px] pr-1 border-emerald-600">
       <img
-        src={
-          userData?.picture ? userData?.picture : "/src/assets/img/ostrich.png"
-        }
+        src={userData?.picture ? userData?.picture : defaultAvatar}
         alt="user picture"
         className="h-24 w-24 border-solid border-2 rounded-full self-center border-emerald-600"
       />
