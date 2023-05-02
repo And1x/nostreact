@@ -42,7 +42,7 @@ export default function Linklist() {
       <ContentBox>
         <ul>
           <img
-            src="src/assets/img/ostrich.png"
+            src="/src/assets/img/ostrich.png"
             alt=""
             className="absolute h-36 opacity-40 right-5 bottom-0"
           />

@@ -3,7 +3,7 @@ export default function Home() {
     <>
       <div className="flex justify-center items-center">
         <img
-          src="src/assets/img/ostrich-gang.png"
+          src="/src/assets/img/ostrich-gang.png"
           alt="ostrich gang background"
           className="opacity-20 "
         />
