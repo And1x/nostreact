@@ -39,16 +39,6 @@
       "title": "Nostr RealyPool implementation in TypeScript",
       "url": "https://github.com/adamritter/nostr-relaypool-ts",
       "category": ["dev", "relay"]
-    },
-    {
-      "title": "---Placeholder---",
-      "url": "#",
-      "category": []
-    },
-    {
-      "title": "---Placeholder---",
-      "url": "#",
-      "category": []
     }
   ],
   "Clients GUI": [

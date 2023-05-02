@@ -11,9 +11,6 @@ export default function Navbar() {
           <li className="font-bold text-slate-50 hover:underline">
             <a href="/resources">Resources</a>
           </li>
-          <li className="font-bold text-slate-50 hover:underline">
-            <a href="/search">Search Nostr</a>
-          </li>
         </div>
         {/* <li className="font-bold text-slate-50"> */}
         {/* todo: DropDown Navigation */}
