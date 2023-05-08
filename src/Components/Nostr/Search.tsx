@@ -1,5 +1,6 @@
 import { nip19 } from "nostr-tools";
 import { useNavigate } from "react-router-dom";
+import ComingSoon from "../ComingSoon";
 
 export default function NostrSearch() {
   let query: string | null | undefined;
@@ -19,8 +20,18 @@ export default function NostrSearch() {
 
   function parseQuery(query: string) {
     // todo: better check if it's hex -> let user decide if its note/profile etc. (radio-box)
-    if (query.length > 1 && !query.startsWith("n")) {
+    const HEXregex = /[0-9A-Fa-f]{6}/g;
+    if (query.length === 64 && query.match(HEXregex)) {
       navigate(`/p/${query}`);
+      // todo: use conditions to check against more event types
+    } else if (
+      query.length < 63 ||
+      !query.startsWith("npub") ||
+      !query.startsWith("note")
+    ) {
+      // todo: handle text search of notes
+      let str = "Search notes by text";
+      navigate(`/tbd/${str}`);
     }
 
     try {
@@ -47,16 +58,26 @@ export default function NostrSearch() {
 
   return (
     <div className="flex flex-col items-center justify-center gap-3">
-      <form method="post" onSubmit={handleSubmit} className="flex gap-1">
+      <form method="post" onSubmit={handleSubmit} className="group flex gap-1">
+        <div className="relative">
+          <span className="flex absolute inset-y-0 left-0 pl-2 pr-1 border-r border-slate-600">
+            <button type="submit">🔎</button>
+          </span>
+        </div>
         <input
           name="search"
           placeholder="npub, note, hex..."
-          className="outline-none focus:border-2 focus:border-orange-400 border-2 border-white border-solid rounded-md w-64"
+          className="pl-8 outline-none focus:border-2 focus:border-orange-400 border-2 border-white border-solid rounded-md w-64"
         ></input>
-        <button type="reset" className="text-red-600">
-          X
+        <button type="reset" className="invisible group-focus-within:visible">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 96 960 960"
+            className="w-6 h-6 fill-red-500"
+          >
+            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+          </svg>
         </button>
-        <button type="submit">🔎</button>
       </form>
     </div>
   );

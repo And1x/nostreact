@@ -28,34 +28,32 @@ export default function ProfileFull() {
   document.title = profileName;
 
   return (
-    <div>
-      <ContentBox>
-        <div className="flex h-auto max-w-[75vw] min-w-[42rem] font-normal text-emerald-50 ">
-          <img
-            src={userData?.picture ? userData?.picture : defaultAvatar}
-            alt="user picture"
-            className="h-32 w-32 border-solid border-2 rounded-full border-emerald-600"
-          />
-          <table>
-            <tr className="even:break-all">
-              <td className="text-emerald-400 pr-2">name:</td>
-              <td>{profileName}</td>
-            </tr>
-            <tr className="even:break-all">
-              <td className="text-emerald-400 pr-2">npub:</td>
-              <td> {userData?.npub}</td>
-            </tr>
-            <tr className="even:break-all">
-              <td className="text-emerald-400 pr-2">about:</td>
-              <td>{userData?.about}</td>
-            </tr>
-            <tr className="even:break-all">
-              <td className="text-emerald-400 pr-2">lud16:</td>
-              <td>{userData?.lud16}</td>
-            </tr>
-          </table>
-        </div>
-      </ContentBox>
-    </div>
+    <ContentBox>
+      <div className="flex h-auto max-w-[75vw] min-w-[42rem] font-normal text-emerald-50 ">
+        <img
+          src={userData?.picture ? userData?.picture : defaultAvatar}
+          alt="user picture"
+          className="h-32 w-32 border-solid border-2 rounded-full border-emerald-600"
+        />
+        <table>
+          <tr className="even:break-all">
+            <td className="text-emerald-400 pr-2">name:</td>
+            <td>{profileName}</td>
+          </tr>
+          <tr className="even:break-all">
+            <td className="text-emerald-400 pr-2">npub:</td>
+            <td> {userData?.npub}</td>
+          </tr>
+          <tr className="even:break-all">
+            <td className="text-emerald-400 pr-2">about:</td>
+            <td>{userData?.about}</td>
+          </tr>
+          <tr className="even:break-all">
+            <td className="text-emerald-400 pr-2">lud16:</td>
+            <td>{userData?.lud16}</td>
+          </tr>
+        </table>
+      </div>
+    </ContentBox>
   );
 }

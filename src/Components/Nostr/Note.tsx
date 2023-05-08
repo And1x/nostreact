@@ -6,7 +6,7 @@ export default function Note({ event }: { event: Event }) {
     <>
       <div
         key={event.id}
-        className="flex gap-2 h-auto max-w-[75vw] min-w-[42rem]  font-normal text-emerald-50 "
+        className="flex gap-2 h-auto max-w-[75vw] w-[42rem] font-normal text-emerald-50 "
       >
         <ProfileMin pubkey={event.pubkey}></ProfileMin>
 

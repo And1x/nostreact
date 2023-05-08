@@ -29,35 +29,40 @@ export default function Linklist() {
   };
 
   return (
-    <div
-      className="flex justify-center min-h-[256px] min-w-[36rem] max-w-[36rem] focus:outline-none"
-      onKeyDown={keyDownEv}
-      tabIndex={0}
-    >
+    <div className="flex flex-col">
+      <h1 className="text-3xl text-center text-emerald-700 pt-2 font-bold underline p-5 mb-6">
+        NOSTR - Resources
+      </h1>
       <div
-        className="flex items-center cursor-pointer p-1 text-emerald-600 font-bold"
-        onClick={moveLeft}
+        className="flex justify-center min-h-[18rem] w-36rem max-w-[36rem] focus:outline-none"
+        onKeyDown={keyDownEv}
+        tabIndex={0}
       >
-        ˂˂
-      </div>
-      <ContentBox>
-        <ul>
-          <img
-            src={ostrichImg}
-            alt=""
-            className="absolute h-36 opacity-40 right-5 bottom-0"
-          />
-          <div className="text-center text-2xl underline text-emerald-300 font-bold mb-6">
-            {currentSection}
-          </div>
-          {listItems[currentSection]}
-        </ul>
-      </ContentBox>
-      <div
-        className="flex items-center cursor-pointer p-1  text-emerald-600 font-bold"
-        onClick={moveRight}
-      >
-        ˃˃
+        <div
+          className="flex items-center cursor-pointer p-1 text-emerald-600 font-bold"
+          onClick={moveLeft}
+        >
+          ˂˂
+        </div>
+        <ContentBox>
+          <ul className="max-w-[75vw] min-w-[31rem]">
+            <img
+              src={ostrichImg}
+              alt=""
+              className="absolute h-36 opacity-40 right-5 bottom-0"
+            />
+            <div className="text-center text-2xl underline text-emerald-300 font-bold mb-6">
+              {currentSection}
+            </div>
+            {listItems[currentSection]}
+          </ul>
+        </ContentBox>
+        <div
+          className="flex items-center cursor-pointer p-1  text-emerald-600 font-bold"
+          onClick={moveRight}
+        >
+          ˃˃
+        </div>
       </div>
     </div>
   );
