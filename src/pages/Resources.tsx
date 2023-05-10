@@ -1,22 +1,23 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import ContentBox from "../Components/ContentBox";
-import { generateLinkListsJSX } from "../utils/getResources";
 import ostrichImg from "/src/assets/img/ostrich.png";
+import ResourcesList, {
+  category,
+  allCategories,
+} from "../Components/ResourcesList";
 
-export default function Linklist() {
-  let listItems = generateLinkListsJSX();
+export default function Resources() {
   let [sectionIndex, setSectionIndex] = useState(0);
-  let currentSection = Object.keys(listItems)[sectionIndex];
 
   const moveRight = () => {
-    sectionIndex >= Object.keys(listItems).length - 1
+    sectionIndex >= allCategories.length - 1
       ? setSectionIndex(0)
       : setSectionIndex(sectionIndex + 1);
   };
 
   const moveLeft = () => {
     sectionIndex <= 0
-      ? setSectionIndex(Object.keys(listItems).length - 1)
+      ? setSectionIndex(allCategories.length - 1)
       : setSectionIndex(sectionIndex - 1);
   };
 
@@ -38,30 +39,42 @@ export default function Linklist() {
         onKeyDown={keyDownEv}
         tabIndex={0}
       >
-        <div
-          className="flex items-center cursor-pointer p-1 text-emerald-600 font-bold"
-          onClick={moveLeft}
-        >
-          ˂˂
+        <div className="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 96 960 960"
+            className="w-8 h-8 fill-white cursor-pointer"
+            onClick={moveLeft}
+          >
+            <path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z" />
+          </svg>
         </div>
+
         <ContentBox>
-          <ul className="max-w-[75vw] min-w-[31rem]">
+          <ul className="max-w-[75vw] min-w-[31rem] min-h-[18rem] list-disc pl-1">
             <img
               src={ostrichImg}
-              alt=""
+              alt="Ostrich"
               className="absolute h-36 opacity-40 right-5 bottom-0"
             />
             <div className="text-center text-2xl underline text-emerald-300 font-bold mb-6">
-              {currentSection}
+              {allCategories[sectionIndex]}
             </div>
-            {listItems[currentSection]}
+            <ResourcesList
+              selectedCategory={allCategories[sectionIndex] as category}
+            />
           </ul>
         </ContentBox>
-        <div
-          className="flex items-center cursor-pointer p-1  text-emerald-600 font-bold"
-          onClick={moveRight}
-        >
-          ˃˃
+
+        <div className="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 96 960 960"
+            className="w-8 h-8 fill-white cursor-pointer"
+            onClick={moveRight}
+          >
+            <path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z" />
+          </svg>
         </div>
       </div>
     </div>

@@ -45,17 +45,27 @@
     {
       "title": "Iris Web client",
       "url": "https://iris.to",
-      "category": []
+      "category": ["web"]
     },
     {
       "title": "Snort Web client",
       "url": "https://snort.social",
-      "category": []
+      "category": ["web"]
     },
     {
       "title": "Gossip Desktop client",
       "url": "https://github.com/mikedilger/gossip",
-      "category": []
+      "category": ["desktop"]
+    },
+    {
+      "title": "Amethyst Android client",
+      "url": "https://github.com/vitorpamplona/amethyst",
+      "category": ["mobile", "android"]
+    },
+    {
+      "title": "Damus iOS client",
+      "url": "https://github.com/damus-io/damust",
+      "category": ["mobile", "ios"]
     }
   ],
   "Clients CLI": [
@@ -67,7 +77,12 @@
     {
       "title": "Nostr CLI in C",
       "url": "https://github.com/jb55/nostril",
-      "category": []
+      "category": ["c", "cli"]
+    },
+    {
+      "title": "nostr_console CLI in Dart",
+      "url": "https://github.com/vishalxl/nostr_console",
+      "category": ["dart", "cli"]
     }
   ],
   "Key Management": [
@@ -79,6 +94,11 @@
     {
       "title": "nos2x Browser Extension",
       "url": "https://github.com/fiatjaf/nos2x",
+      "category": ["key", "extension"]
+    },
+    {
+      "title": "nostr-keyx Browser Extension",
+      "url": "https://github.com/susumuota/nostr-keyx",
       "category": ["key", "extension"]
     }
   ],
@@ -92,6 +112,11 @@
       "title": "Nostr motivation",
       "url": "https://github.com/nostr-protocol/nostr",
       "category": []
+    },
+    {
+      "title": "Nostr directory",
+      "url": "https://github.com/pseudozach/nostr.directory",
+      "category": ["find", "user"]
     }
   ]
 }
