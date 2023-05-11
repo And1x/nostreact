@@ -8,7 +8,7 @@ export default function Footer() {
         alt="Github-Logo"
         className="object-contain h-6 w-auto mr-1"
       />
-      <a href="https://github.com/and1x">Github</a>
+      <a href="https://github.com/And1x/nostreact">Github</a>
     </div>
   );
 }
