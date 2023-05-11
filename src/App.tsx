@@ -22,22 +22,20 @@ const relayUrls = [
 function App() {
   return (
     <NostrProvider relayUrls={relayUrls} debug={true}>
-      <BrowserRouter>
-        <div className="flex flex-col min-h-screen gap-8 bg-gray-800">
-          <Navbar />
-          <div className="flex justify-center">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/resources" element={<Resources />} />
-              <Route path="/p/:pubkey" element={<ProfileFull />} />
-              <Route path="/n/:noteID" element={<NoteList />} />
-              <Route path="/tbd/:query" element={<ComingSoon />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-          <Footer />
+      <div className="flex flex-col min-h-screen gap-8 bg-gray-800">
+        <Navbar />
+        <div className="flex justify-center">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/p/:pubkey" element={<ProfileFull />} />
+            <Route path="/n/:noteID" element={<NoteList />} />
+            <Route path="/tbd/:query" element={<ComingSoon />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
-      </BrowserRouter>
+        <Footer />
+      </div>
     </NostrProvider>
   );
 }

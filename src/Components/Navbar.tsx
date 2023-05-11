@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import NostrSearch from "./Nostr/Search";
 
 export default function Navbar() {
@@ -6,10 +7,10 @@ export default function Navbar() {
       <ul className="flex h-16 min-w-full justify-between bg-gray-700 shadow-2xl p-5 ">
         <div className="flex gap-4">
           <li className="font-bold text-slate-50 hover:underline">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="font-bold text-slate-50 hover:underline">
-            <a href="/resources">Resources</a>
+            <Link to="/resources">Resources</Link>
           </li>
         </div>
         {/* <li className="font-bold text-slate-50"> */}

@@ -6,7 +6,7 @@ export default function Home() {
       <div className="flex justify-center items-center">
         <div className="min-w-[26rem]">
           <h1 className="text-3xl text-center text-emerald-700 pt-2 font-bold underline p-5">
-            NOSTR ?
+            What is Nostr?
           </h1>
           <p className="text-white text-xl p-5 italic">
             "The simplest open protocol that is able to create a
