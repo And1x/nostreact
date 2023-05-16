@@ -1,7 +1,7 @@
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import { NostrProvider } from "nostr-react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Resources from "./pages/Resources";
 import ProfileFull from "./Components/Nostr/ProfileFull";
@@ -24,16 +24,16 @@ function App() {
     <NostrProvider relayUrls={relayUrls} debug={true}>
       <div className="flex flex-col min-h-screen gap-8 bg-gray-800">
         <Navbar />
-        <div className="flex justify-center">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/p/:pubkey" element={<ProfileFull />} />
-            <Route path="/n/:noteID" element={<NoteList />} />
-            <Route path="/tbd/:query" element={<ComingSoon />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/p/:pubkey" element={<ProfileFull />} />
+          <Route path="/n/:noteID" element={<NoteList />} />
+          <Route path="/tbd/:query" element={<ComingSoon />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+
         <Footer />
       </div>
     </NostrProvider>

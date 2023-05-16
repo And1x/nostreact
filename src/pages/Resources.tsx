@@ -30,7 +30,7 @@ export default function Resources() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center justify-center">
       <h1 className="text-3xl text-center text-emerald-700 pt-2 font-bold underline p-5 mb-6">
         NOSTR - Resources
       </h1>
