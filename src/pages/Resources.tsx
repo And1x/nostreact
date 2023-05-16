@@ -7,6 +7,7 @@ import ResourcesList, {
 } from "../Components/ResourcesList";
 
 export default function Resources() {
+  document.title = "Resources";
   let [sectionIndex, setSectionIndex] = useState(0);
 
   const moveRight = () => {

@@ -6,6 +6,7 @@ import { toHex } from "../../utils/formatNIP19";
 
 // todo: rethink to create Lists not only from noteIDs eg. #hashtags
 export default function NoteList() {
+  document.title = "notes";
   let params = useParams();
   // todo: handle invalid noteID
   if (!params.noteID) {

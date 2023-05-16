@@ -3,6 +3,7 @@ import ProfileMin from "../Components/Nostr/ProfileMin";
 import ostrichGang from "/src/assets/img/ostrich-gang.png";
 
 export default function Home() {
+  document.title = "nostreact";
   return (
     <>
       <div className="flex">
