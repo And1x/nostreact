@@ -29,30 +29,30 @@ export default function ProfileFull() {
 
   return (
     <ContentBox>
-      <div className="flex h-auto max-w-[75vw] min-w-[42rem] font-normal text-emerald-50 ">
+      <div className="flex max-w-[75vw] min-w-[42rem] font-normal text-emerald-50 ">
         <img
           src={userData?.picture ? userData?.picture : defaultAvatar}
           alt="user picture"
           className="h-32 w-32 border-solid border-2 rounded-full border-emerald-600"
         />
-        <table>
-          <tr className="even:break-all">
-            <td className="text-emerald-400 pr-2">name:</td>
-            <td>{profileName}</td>
-          </tr>
-          <tr className="even:break-all">
-            <td className="text-emerald-400 pr-2">npub:</td>
-            <td> {userData?.npub}</td>
-          </tr>
-          <tr className="even:break-all">
-            <td className="text-emerald-400 pr-2">about:</td>
-            <td>{userData?.about}</td>
-          </tr>
-          <tr className="even:break-all">
-            <td className="text-emerald-400 pr-2">lud16:</td>
-            <td>{userData?.lud16}</td>
-          </tr>
-        </table>
+        <div className="min-w-0">
+          <div className="flex">
+            <h4 className="w-16 text-emerald-400">name:</h4>
+            <p className="truncate w-full">{profileName}</p>
+          </div>
+          <div className="flex">
+            <h4 className="w-16 text-emerald-400">npub:</h4>
+            <p className="w-full">{userData?.npub}</p>
+          </div>
+          <div className="flex">
+            <h4 className="w-16 text-emerald-400">about:</h4>
+            <p className="w-full">{userData?.about}</p>
+          </div>
+          <div className="flex">
+            <h4 className="w-16 text-emerald-400">lud16:</h4>
+            <p className="w-full">{userData?.lud16}</p>
+          </div>
+        </div>
       </div>
     </ContentBox>
   );

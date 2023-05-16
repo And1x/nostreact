@@ -43,7 +43,7 @@ export default function Resources() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 96 960 960"
-            className="w-8 h-8 fill-white cursor-pointer"
+            className="w-8 h-8 fill-white hover:fill-orange-400 cursor-pointer"
             onClick={moveLeft}
           >
             <path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z" />
@@ -70,7 +70,7 @@ export default function Resources() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 96 960 960"
-            className="w-8 h-8 fill-white cursor-pointer"
+            className="w-8 h-8 fill-white hover:fill-orange-400 cursor-pointer"
             onClick={moveRight}
           >
             <path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z" />

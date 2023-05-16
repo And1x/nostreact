@@ -8,16 +8,17 @@ export default function ProfileMin({ pubkey }: { pubkey: string }) {
   });
 
   return (
-    <div className="flex flex-col w-28 min-w-[7rem] text-emerald-50 text-xs  border-r-[1px] pr-1 border-emerald-600">
+    <a
+      href={`/p/${nip19.npubEncode(pubkey)}`}
+      className="flex flex-col items-center w-24 min-w-[6rem]"
+    >
       <img
         src={userData?.picture ? userData?.picture : defaultAvatar}
         alt="user picture"
-        className="h-24 w-24 border-solid border-2 rounded-full self-center border-emerald-600"
+        className="h-20 w-20 border-solid border-2 rounded-full self-center border-emerald-600"
       />
-      <a
-        href={`/p/${nip19.npubEncode(pubkey)}`}
-        className="min-w-0 text-center truncate"
-      >
+
+      <span className="text-emerald-50 pt-1 text-sm max-w-[5rem] truncate">
         {userData?.name
           ? userData?.name
           : userData?.display_name
@@ -25,7 +26,7 @@ export default function ProfileMin({ pubkey }: { pubkey: string }) {
           : userData?.username
           ? userData?.username
           : "noname"}
-      </a>
-    </div>
+      </span>
+    </a>
   );
 }
