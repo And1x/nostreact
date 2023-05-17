@@ -1,9 +1,22 @@
 import { ReactNode } from "react";
 
-export default function ContentBox({ children }: { children: ReactNode }) {
+interface ContentBoxProbs {
+  children: ReactNode;
+  margin?: string;
+  borderColor?: string;
+}
+
+export default function ContentBox({
+  children,
+  margin,
+  borderColor,
+}: ContentBoxProbs) {
   return (
-    <div className="relative box-border h-auto  p-4 font-bold text-slate-200 bg-gray-700 rounded border border-emerald-600 shadow-xl">
-      {/* <div className="relative box-border h-auto w-full p-4 font-bold text-slate-200 bg-gray-700 rounded border border-emerald-600 shadow-xl"> */}
+    <div
+      className={`relative box-border h-auto  p-4 font-bold text-slate-200 bg-gray-700 rounded border shadow-xl ${
+        borderColor ? borderColor : "border-emerald-600"
+      } ${margin}`}
+    >
       {children}
     </div>
   );

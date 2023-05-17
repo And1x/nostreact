@@ -11,9 +11,14 @@
       "category": ["dev", "web", "converter"]
     },
     {
-      "title": "nostr army knife",
+      "title": "Nostr army knife",
       "url": "https://nak.nostr.com/",
       "category": ["dev", "web", "converter"]
+    },
+    {
+      "title": "Nostr search/discovery",
+      "url": "https://nostr.band",
+      "category": ["dev", "web", "search"]
     },
     {
       "title": "Nostr Tools in JS",
@@ -43,27 +48,32 @@
   ],
   "Clients GUI": [
     {
-      "title": "Iris Web client",
+      "title": "Primal - Cached Web client",
+      "url": "https://primal.net",
+      "category": ["web"]
+    },
+    {
+      "title": "Iris - Web client",
       "url": "https://iris.to",
       "category": ["web"]
     },
     {
-      "title": "Snort Web client",
+      "title": "Snort - Web client",
       "url": "https://snort.social",
       "category": ["web"]
     },
     {
-      "title": "Gossip Desktop client",
+      "title": "Gossip - Desktop client",
       "url": "https://github.com/mikedilger/gossip",
       "category": ["desktop"]
     },
     {
-      "title": "Amethyst Android client",
+      "title": "Amethyst - Android client",
       "url": "https://github.com/vitorpamplona/amethyst",
       "category": ["mobile", "android"]
     },
     {
-      "title": "Damus iOS client",
+      "title": "Damus - iOS client",
       "url": "https://github.com/damus-io/damust",
       "category": ["mobile", "ios"]
     }

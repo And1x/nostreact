@@ -19,13 +19,15 @@ export default function NoteList() {
   const events = getEventsFiltered({ noteID }, false);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-3">
+    <div className="flex flex-col items-center justify-center ">
       {parentEV.map((event) => {
         return (
-          // todo: add ContentBox with differntstyling to show it's parent
-          <ContentBox>
-            <Note event={event}></Note>
-          </ContentBox>
+          <>
+            <ContentBox borderColor="border-t-orange-400">
+              <Note event={event} />
+            </ContentBox>
+            <div className="h-5 border-x "></div>
+          </>
         );
       })}
 
@@ -34,8 +36,8 @@ export default function NoteList() {
         // only child events with tag ["e"noteID] are included
         if (event.tags.find((el) => el.includes(noteID))) {
           return (
-            <ContentBox>
-              <Note event={event}></Note>
+            <ContentBox margin="mb-3">
+              <Note event={event} />
             </ContentBox>
           );
         }
