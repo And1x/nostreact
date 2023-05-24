@@ -4,7 +4,6 @@ import Note from "./Note";
 import { Link, useParams } from "react-router-dom";
 import { toHex } from "../../utils/formatNIP19";
 import { nip10, nip19 } from "nostr-tools";
-import NoteFooter from "./NoteFooter";
 
 // todo: rethink to create Lists not only from noteIDs eg. #hashtags
 export default function NoteList() {
@@ -47,8 +46,7 @@ export default function NoteList() {
               )}
 
               <ContentBox borderColor="border-t-orange-400">
-                <Note event={event} />
-                <NoteFooter eventID={event.id} replies={events.length} />
+                <Note event={event} replies={events.length} />
               </ContentBox>
               <div
                 className={`h-5 ${events.length > 0 ? "border-x" : null}`}
@@ -77,8 +75,7 @@ export default function NoteList() {
         ) {
           return (
             <ContentBox margin="mb-3" key={event.id}>
-              <Note event={event} />
-              <NoteFooter eventID={event.id} replies={replies} />
+              <Note event={event} replies={replies} />
             </ContentBox>
           );
         }
