@@ -22,7 +22,7 @@ const relayUrls = [
 function App() {
   return (
     <NostrProvider relayUrls={relayUrls} debug={true}>
-      <div className="flex flex-col min-h-screen gap-8 bg-gray-800">
+      <div className="flex flex-col min-h-screen min-w-fit gap-8 bg-gray-800">
         <Navbar />
 
         <Routes>

@@ -1,7 +1,11 @@
 import ProfileMin from "./ProfileMin";
-import { Event } from "nostr-tools";
+import { Event, nip10 } from "nostr-tools";
 
-export default function Note({ event }: { event: Event }) {
+type Probs = {
+  event: Event;
+};
+
+export default function Note({ event }: Probs) {
   return (
     <>
       <div
@@ -13,22 +17,6 @@ export default function Note({ event }: { event: Event }) {
         <div className="[overflow-wrap:anywhere]  border-l pl-4 border-emerald-600">
           {event.content}
         </div>
-        {/* todo: use tags and other metadata as modal */}
-        {/* <h3>Stats:</h3>
-          <div>
-            {event.tags.map((tag, i) => {
-              return (
-                <div>
-                  {`${i}: `}
-                  {tag}
-                </div>
-              );
-            })}
-          </div> */}
-
-        {/* <div>EV tags:{event.tags[0]}</div> */}
-        {/* <div>EV kind: {event.kind}</div> */}
-        {/* <div>EV pub: {event.pubkey}</div> */}
       </div>
     </>
   );

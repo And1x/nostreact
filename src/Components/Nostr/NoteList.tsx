@@ -1,8 +1,10 @@
 import { useNostrEvents } from "nostr-react";
 import ContentBox from "../ContentBox";
 import Note from "./Note";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { toHex } from "../../utils/formatNIP19";
+import { nip10, nip19 } from "nostr-tools";
+import NoteFooter from "./NoteFooter";
 
 // todo: rethink to create Lists not only from noteIDs eg. #hashtags
 export default function NoteList() {
@@ -21,23 +23,62 @@ export default function NoteList() {
   return (
     <div className="flex flex-col items-center justify-center ">
       {parentEV.map((event) => {
-        return (
-          <>
-            <ContentBox borderColor="border-t-orange-400">
-              <Note event={event} />
-            </ContentBox>
-            <div className="h-5 border-x "></div>
-          </>
-        );
+        if (event.id === noteID) {
+          let noteType = nip10.parse(event);
+          let parentID;
+          noteType.reply
+            ? (parentID = noteType.reply.id)
+            : noteType.root
+            ? (parentID = noteType.root.id)
+            : undefined;
+
+          return (
+            <>
+              {parentID ? (
+                <Link
+                  to={`/n/${nip19.noteEncode(parentID)}`}
+                  reloadDocument
+                  className="text-white hover:text-orange-500"
+                >
+                  ↑ Go to parent note
+                </Link>
+              ) : (
+                <></>
+              )}
+
+              <ContentBox borderColor="border-t-orange-400">
+                <Note event={event} />
+                <NoteFooter eventID={event.id} replies={events.length} />
+              </ContentBox>
+              <div
+                className={`h-5 ${events.length > 0 ? "border-x" : null}`}
+              ></div>
+            </>
+          );
+        }
       })}
 
       {events.map((event) => {
-        // todo: events should already be filtered -> this check is just to be safe
-        // only child events with tag ["e"noteID] are included
-        if (event.tags.find((el) => el.includes(noteID))) {
+        let parentID = parentEV[0]?.id;
+        let noteType = nip10.parse(event);
+        let replies = 0;
+
+        // todo: add every note in an array for the replies instead of searching the events array on every note for replies
+        events.forEach((e) => {
+          if (nip10.parse(e).reply?.id === event.id) {
+            replies++;
+          }
+        });
+
+        // some notes have the root-Note as reply others not -
+        if (
+          (noteType.reply === undefined && noteType.root?.id === parentID) ||
+          noteType.reply?.id === parentID
+        ) {
           return (
-            <ContentBox margin="mb-3">
+            <ContentBox margin="mb-3" key={event.id}>
               <Note event={event} />
+              <NoteFooter eventID={event.id} replies={replies} />
             </ContentBox>
           );
         }
