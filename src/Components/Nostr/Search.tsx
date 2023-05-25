@@ -1,6 +1,6 @@
 import { nip19 } from "nostr-tools";
 import { useNavigate } from "react-router-dom";
-import ComingSoon from "../ComingSoon";
+import { ReactComponent as CloseIcon } from "/src/assets/icons/close.svg";
 
 export default function NostrSearch() {
   let query: string | null | undefined;
@@ -70,13 +70,7 @@ export default function NostrSearch() {
           className="pl-8 outline-none focus:border-2 focus:border-orange-400 border-2 border-white border-solid rounded-md w-64"
         ></input>
         <button type="reset" className="invisible group-focus-within:visible">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 96 960 960"
-            className="w-6 h-6 fill-red-500"
-          >
-            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
-          </svg>
+          <CloseIcon className="w-6 h-6 fill-red-500" />
         </button>
       </form>
     </div>

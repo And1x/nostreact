@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { ReactComponent as CloseIcon } from "/src/assets/icons/close.svg";
 
 type Probs = {
   children: ReactElement;
@@ -22,13 +23,7 @@ export default function InfoModal({ children, onClose, showModal }: Probs) {
               className="absolute top-2 right-2 bg-transparent  text-red-600 font-extrabold text-2xl"
               onClick={onClose}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 96 960 960"
-                className="w-8 h-8 fill-slate-700 hover:fill-slate-950"
-              >
-                <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
-              </svg>
+              <CloseIcon className="w-8 h-8 fill-slate-700 hover:fill-slate-950" />
             </button>
 
             {children}
