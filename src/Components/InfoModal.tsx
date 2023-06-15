@@ -13,10 +13,10 @@ export default function InfoModal({ children, onClose, showModal }: Probs) {
       {showModal ? (
         <div
           onClick={onClose}
-          className="flex justify-center items-center fixed inset-0 z-50 border backdrop-blur-sm "
+          className="flex justify-center items-center fixed inset-0 z-50 text-sm backdrop-blur-sm "
         >
           <div
-            className="relative border shadow-2xl rounded-lg bg-gray-200 font-medium p-6 min-w-[54rem] max-w-[80vw]"
+            className="relative border shadow-2xl rounded-lg bg-gray-200 font-medium p-6 min-w-[54rem] max-w-[80vw] max-h-[95vh] overflow-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
