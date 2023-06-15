@@ -45,7 +45,7 @@ export default function NoteList() {
                 <></>
               )}
 
-              <ContentBox borderColor="border-t-orange-400">
+              <ContentBox borderColor="border-t-orange-400" padding="p-2 pb-0">
                 <Note event={event} replies={events.length} />
               </ContentBox>
               <div
@@ -74,7 +74,7 @@ export default function NoteList() {
           noteType.reply?.id === parentID
         ) {
           return (
-            <ContentBox margin="mb-3" key={event.id}>
+            <ContentBox margin="mb-3" key={event.id} padding="p-2 pb-0">
               <Note event={event} replies={replies} />
             </ContentBox>
           );

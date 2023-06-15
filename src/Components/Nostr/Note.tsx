@@ -50,13 +50,13 @@ export default function Note({ event, replies }: Probs) {
         </div>
       </InfoModal>
 
-      <div className="flex justify-between border-t border-emerald-600 mt-2 pt-2">
+      <div className="flex justify-between border-t border-emerald-600 mt-2 pt-[2px]">
         <Link
           to={`/n/${noteId}`}
           reloadDocument
-          className="flex text-white font-normal gap-1 fill-current hover:text-orange-500"
+          className="flex items-center text-white font-normal gap-1 fill-current hover:text-orange-500"
         >
-          <RepliesIcon className="w-6 h-6" />
+          <RepliesIcon className="w-4 h-4" />
           {replies}
         </Link>
 
